@@ -22,12 +22,7 @@ const HomePage = () => {
       <S.BrandDetailText>random 과 image 의 합성어입니다.</S.BrandDetailText>
       <S.BrandDetailText>감상보시죠.! 오늘의 무작위 사진들을..</S.BrandDetailText>
       <Spacer h={2} />
-      <Button
-        onClick={() => {
-          onChangeImageKeyword()
-        }}>
-        다음 사진으로..
-      </Button>
+      <Button onClick={onChangeImageKeyword}>다음 사진으로..</Button>
       <BackgroundImage
         src={`https://source.unsplash.com/random/?${IMAGE_KEYWORDS[keywordIndex]}`}
       />

@@ -14,7 +14,11 @@ const ViewFinder = () => {
       <S.Bracket corner="topLeft" />
       <S.Bracket corner="topRight" />
 
-      <S.CenterCircle></S.CenterCircle>
+      <S.RecordText>🔴 REC</S.RecordText>
+
+      <S.CenterCircle>
+        <S.SemiTransparentHalfCircle />
+      </S.CenterCircle>
 
       <S.Bracket corner="bottomLeft" />
       <S.Bracket corner="bottomRight" />
@@ -61,7 +65,6 @@ const FinderFrame = styled.div`
   width: ${FINDER_SIZE};
   height: ${FINDER_SIZE};
 `
-
 const Bracket = styled(FinderFrame)`
   border-style: solid;
   border-color: ${COLORS.GSCALE[0]};
@@ -74,8 +77,29 @@ const CenterCircle = styled(FinderFrame)`
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 0.2rem ${COLORS.GSCALE[600]};
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
 `
+const SemiTransparentHalfCircle = styled.div`
+  width: 100%;
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+`
+const RecordText = styled.h2`
+  position: fixed;
+  z-index: 10;
+  color: ${COLORS.GSCALE[600]};
+  top: 8rem;
+  left: 8rem;
+  text-shadow: 0rem 0rem 1rem ${COLORS.GSCALE[0]};
+`
+
 const S = {
   Bracket,
   CenterCircle,
+  SemiTransparentHalfCircle,
+  RecordText,
 }
