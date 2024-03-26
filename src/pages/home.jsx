@@ -1,9 +1,20 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 import { Button, Spacer } from '../common'
 import { COLORS } from '../consts/design-token'
+import { IMAGE_KEYWORDS } from '../consts/system'
+import { getRandomNumberInRange } from '../functions/utils/random'
 import { BackgroundImage, ViewFinder } from './parts'
 
 const HomePage = () => {
+  const [keywordIndex, setKeywordIndex] = useState(0)
+  const TOTAL_NUMBER_OF_KEYWORDS = IMAGE_KEYWORDS.length
+
+  const onChangeImageKeyword = () => {
+    const nextKeywordIndex = getRandomNumberInRange(0, TOTAL_NUMBER_OF_KEYWORDS)
+    setKeywordIndex(nextKeywordIndex)
+  }
+
   return (
     <S.Wrapper>
       <S.BrandNameText>Radimage</S.BrandNameText>
@@ -11,8 +22,15 @@ const HomePage = () => {
       <S.BrandDetailText>random 과 image 의 합성어입니다.</S.BrandDetailText>
       <S.BrandDetailText>감상보시죠.! 오늘의 무작위 사진들을..</S.BrandDetailText>
       <Spacer h={2} />
-      <Button>다음 사진으로..</Button>
-      <BackgroundImage src="https://source.unsplash.com/random/" />
+      <Button
+        onClick={() => {
+          onChangeImageKeyword()
+        }}>
+        다음 사진으로..
+      </Button>
+      <BackgroundImage
+        src={`https://source.unsplash.com/random/?${IMAGE_KEYWORDS[keywordIndex]}`}
+      />
       <ViewFinder />
     </S.Wrapper>
   )

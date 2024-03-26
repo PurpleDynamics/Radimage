@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { COLORS } from '../consts/design-token'
 
-const Button = ({ children }) => {
-  return <S.ButtonBase>{children}</S.ButtonBase>
+const Button = ({ children, ...rest }) => {
+  return <S.ButtonBase {...rest}>{children}</S.ButtonBase>
 }
 
 export default Button
