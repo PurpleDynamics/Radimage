@@ -8,8 +8,8 @@ export const COLORS = {
     100: '#d0d0d0',
     0: '#ffffff',
   },
-  SYSYEM: {
-    WARINING: '#DC2201',
+  SYSTEM: {
+    WARNING: '#DC2201',
     POSITIVE_BLUE: '#0300DB',
     POSITIVE_GREEN: '#3EDB00',
     NOTICE: '#DB8A00',
