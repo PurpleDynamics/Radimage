@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
 
     font-size: ${FONT_SIZE.MD};
     font-family: 'SKYBORI';
-    color: ${COLORS.GSCALE[600]};
+    color: ${COLORS.GSCALE[0]};
   }
   html{
     background-color: ${COLORS.GSCALE[0]};

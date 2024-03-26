@@ -9,4 +9,5 @@ export const IMAGE_KEYWORDS = [
   'coffee',
   'food',
   'trips',
+  'aurora',
 ]
