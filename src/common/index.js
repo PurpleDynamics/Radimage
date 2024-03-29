@@ -4,5 +4,7 @@
  */
 
 import Button from './button'
+import ImageLoader from './image'
+import Skeleton from './skeleton'
 import Spacer from './spacer'
-export { Button, Spacer }
+export { Button, ImageLoader, Skeleton, Spacer }

@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import { Button, Spacer } from '../common'
+import { BackgroundImage, ViewFinder } from './parts'
+
 import { COLORS } from '../consts/design-token'
 import { IMAGE_KEYWORDS } from '../consts/system'
 import { getRandomNumberInRange } from '../functions/utils/random'
-import { BackgroundImage, ViewFinder } from './parts'
 
 const HomePage = () => {
   const [keywordIndex, setKeywordIndex] = useState(0)

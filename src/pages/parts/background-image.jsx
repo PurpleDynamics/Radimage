@@ -1,9 +1,10 @@
 import styled from 'styled-components'
+import { ImageLoader } from '../../common'
 import { COLORS } from '../../consts/design-token'
-const BackgroundImage = ({ ...rest }) => {
+const BackgroundImage = ({ src }) => {
   return (
     <S.ImageContainer>
-      <S.FullSizedImage {...rest} />
+      <ImageLoader src={src} />
     </S.ImageContainer>
   )
 }
