@@ -1,4 +1,5 @@
 @font-face {
-	font-family: "SKYBORI";
-	src: url("./SKYBORI.ttf") format("truetype");
+  font-family: 'SKYBORI';
+  src: url('./SKYBORI.ttf') format('truetype');
+  font-display: swap;
 }
