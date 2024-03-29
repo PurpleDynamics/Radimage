@@ -6,6 +6,5 @@
  * @param {number} higher
  * @returns {number}
  */
-export const getRandomNumberInRange = (lower, higher) => {
-  return Math.floor(Math.random() * (higher - lower + 1)) + lower
-}
+export const getRandomNumberInRange = (lower, higher) =>
+  Math.floor(Math.random() * (higher - lower + 1)) + lower

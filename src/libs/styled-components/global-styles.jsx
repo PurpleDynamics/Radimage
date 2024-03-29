@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import '../../assets/fonts/index.css'
-import { BREAK_POINT, COLORS, FONT_SIZE } from '../../consts/design-token'
+import { COLORS, FONT_SIZE } from '../../consts/design-token'
 
 const GlobalStyles = createGlobalStyle`
   *{
@@ -16,12 +16,6 @@ const GlobalStyles = createGlobalStyle`
     background-color: ${COLORS.GSCALE[0]};
     color: ${COLORS.GSCALE[600]};
     font-size: 62.5%;
-    @media screen and (max-width: ${BREAK_POINT.MD}) {
-      font-size: 56.25%;
-    }
-    @media screen and (max-width: ${BREAK_POINT.SM}) {
-      font-size: 50%;
-    }
   }
   h1 {
     font-size: ${FONT_SIZE.HUGE};

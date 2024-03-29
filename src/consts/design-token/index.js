@@ -3,8 +3,5 @@
  * export * from "path" 형식으로 작성
  * color, font-size, break-point 등등
  */
-//
-export * from './break-point'
 export * from './color'
 export * from './font-size'
-export * from './font-weight'
