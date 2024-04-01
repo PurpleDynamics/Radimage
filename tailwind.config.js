@@ -8,6 +8,9 @@ export default {
         ...COLORS,
       },
       fontSize: FONT_SIZE,
+      fontFamily: {
+        SKYBORI: ['SKYBORI'],
+      },
     },
   },
   plugins: [],

@@ -8,4 +8,9 @@ export const COLORS = {
     100: '#d0d0d0',
     0: '#ffffff',
   },
+  BLUR: {
+    RED: '#EB7B87',
+    BLUE: '#0500FF',
+    PINK: '#CC00FF',
+  },
 }

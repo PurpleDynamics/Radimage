@@ -6,13 +6,10 @@
     padding: 0;
     box-sizing: border-box;
 
-    font-weight: 500;
-
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    @apply font-SKYBORI;
   }
   html {
-    font-size: 100%;
+    font-size: 62.5%;
     @apply bg-GSCALE-0 text-GSCALE-600;
   }
 
