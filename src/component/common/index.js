@@ -2,4 +2,5 @@
 // ex] button, input, pagination
 import Button from './button'
 import PendableImg from './pendable-img'
-export { Button, PendableImg }
+import TabBar from './tab-bar'
+export { Button, PendableImg, TabBar }

@@ -28,7 +28,7 @@ export const useInfinityScroll = (searchKeyword) => {
         threshold: 0.3,
       },
     )
-  }, [])
+  }, [searchKeyword])
 
   useEffect(() => {
     if (bottomElementRef === null || !bottomElementRef.current) return
