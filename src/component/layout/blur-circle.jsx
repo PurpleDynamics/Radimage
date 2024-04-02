@@ -6,7 +6,7 @@ const BlurCircle = ({ theme, scale = 'default', position }) => {
 
 export default BlurCircle
 
-const BlurCircleVariant = cva('aspect-square blur-xl fixed rounded-full', {
+const BlurCircleVariant = cva('aspect-square blur-xl fixed rounded-full z-[-1]', {
   variants: {
     theme: {
       red: 'bg-red-500',

@@ -3,7 +3,7 @@ import BlurCircle from './blur-circle'
 
 const Backdrop = () => {
   return (
-    <div className="w-dvw h-dvh overflow-hidden bg-red-50 relative">
+    <div className="w-dvw h-dvh overflow-hidden relative">
       <Outlet />
       <BlurCircle theme="blue" position="left" />
       <BlurCircle theme="red" position="right" scale="small" />
