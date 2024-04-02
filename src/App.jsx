@@ -1,8 +1,8 @@
 import { Gallery } from './pages'
-
 const App = () => {
   return (
-    <div className="w-[100dvw] h-[100dvh] flex flex-col items-center justify-start ">
+    <div className="w-dvw h-dvh flex flex-col items-center justify-start ">
+      asdfkjhsd
       <Gallery />
     </div>
   )

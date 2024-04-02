@@ -8,11 +8,6 @@ const PhotoZone = () => {
       <BlurCircle position={'left'} />
       <BlurCircle position={'botton'} />
       <PhotoBox />
-      <PhotoBox />
-      <PhotoBox />
-      <PhotoBox />
-      <PhotoBox />
-      <PhotoBox />
     </div>
   )
 }
