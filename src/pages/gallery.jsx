@@ -1,71 +1,24 @@
-import { useEffect, useRef } from 'react'
+import { PendableImg } from '../component'
+import { useInfinityScroll } from '../functions/hooks'
+import { PhotoWrapper } from './parts/gallery'
+
 const Gallery = () => {
-  const 관찰대상 = useRef(null)
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          console.log('새로 불러오겠다.')
-          return
-        }
-      })
-    },
-    {
-      threshold: 0.3, // 이렇게 하면 완전히 밑에 닿아야하만 동작하는 건가요? 그런것같은데 생각처럼 잘안됩니다,,,
-    },
-  ) // 얘가 관찰자
-
-  useEffect(() => {
-    const target = document.querySelector('#zzz')
-    console.log(target)
-
-    io.observe(target)
-  }, [])
-
+  const keyword = 'space'
+  const { imgInfoArray, bottomElementRef } = useInfinityScroll(keyword)
   return (
-    <div className="w-full h-full flex flex-col justify-center items-center gap-28 pt-28">
+    <div className="w-full h-full flex flex-col justify-start items-center gap-28 pt-28">
       <h1>tabBar</h1>
-      <div className="flex flex-col items-center gap-10 overflow-y-auto">
-        <img
-          loading="lazy"
-          src="https://loremflickr.com/320/240/money/?random=3"
-          width="320"
-          height="200"
-        />
-        <img
-          src="https://loremflickr.com/320/240/money/?random=3"
-          width="320"
-          height="200"
-        />
-        <img
-          src="https://loremflickr.com/320/240/money/?random=3"
-          width="320"
-          height="200"
-        />
-        <img
-          src="https://loremflickr.com/320/240/money/?random=3"
-          width="320"
-          height="200"
-        />
-        <img
-          src="https://loremflickr.com/320/240/money/?random=3"
-          width="320"
-          height="200"
-        />
-        <img
-          src="https://loremflickr.com/320/240/money/?random=3"
-          width="320"
-          height="200"
-        />
-        <img
-          src="https://loremflickr.com/320/240/money/?random=3"
-          width="320"
-          height="200"
-        />
-
-        <div ref={관찰대상} id="zzz">
-          안녕하세요.
-        </div>
+      <div className="flex flex-col justify-start items-start gap-10">
+        {imgInfoArray.map((imgInfo) => {
+          const imgId = imgInfo.id?.toString()
+          const imgSrc = imgInfo.src
+          return (
+            <PhotoWrapper key={imgId} {...{ keyword, imgId }}>
+              <PendableImg src={imgSrc} />
+            </PhotoWrapper>
+          )
+        })}
+        <div ref={bottomElementRef}>안녕하세요.</div>
       </div>
     </div>
   )
