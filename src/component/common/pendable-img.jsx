@@ -19,6 +19,8 @@ const PendableImg = ({ src, ...rest }) => {
     return (
       <img
         className="w-[280px] md:w-[320px] lg:w-[360px] aspect-[3/2] rounded-md"
+        width={360}
+        height={240}
         {...{ src }}
         {...rest}
       />

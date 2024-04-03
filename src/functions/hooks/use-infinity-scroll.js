@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { getImgInfoArray } from '../utils'
 
-export const useInfinityScroll = (searchKeyword) => {
+export const useInfinityScroll = (searchKeyword, perPage) => {
   /**
    * @info 배열에는 아래와 같은 타입의 객체가 담깁니다.
    * {
@@ -14,21 +14,23 @@ export const useInfinityScroll = (searchKeyword) => {
   const bottomElementRef = useRef(null)
 
   const intersectionObserver = useMemo(() => {
+    setImgInfoArray([])
     return new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const newArray = getImgInfoArray(searchKeyword, 5)
+            const newArray = getImgInfoArray(searchKeyword, perPage)
             setImgInfoArray((prev) => [...prev, ...newArray])
             return
           }
         })
       },
       {
-        threshold: 0.3,
+        rootMargin: '60px',
+        threshold: 1,
       },
     )
-  }, [searchKeyword])
+  }, [searchKeyword, perPage])
 
   useEffect(() => {
     if (bottomElementRef === null || !bottomElementRef.current) return
